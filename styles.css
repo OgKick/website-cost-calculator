@@ -1,0 +1,214 @@
+* {
+    background-color: beige;
+    font-family: 'Fira Code';
+}
+
+p {
+    font-size: 16px;
+    padding: 10px;
+}
+
+/* Container for buttons */
+.buttons {
+    display: flex;
+    justify-content: center; /* Center buttons horizontally */
+    gap: 10px; /* Space between buttons */
+    margin-top: 20px; /* Optional, adjust as needed */
+}
+
+/* Optional: If you want the buttons to be spaced out evenly */
+.buttons button {
+    margin: 0 10px; /* Add space around each button */
+}
+
+/* Style for the info icon */
+.info-icon {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-color: #007BFF;
+    color: white;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 14px;
+    cursor: pointer;
+    margin-left: 10px;
+    line-height: 20px;
+    position: relative;
+}
+
+/* Style for the tooltip */
+.info-icon:hover::after {
+    content: attr(data-info); /* Tooltip content from data-info attribute */
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: white;
+    padding: 8px;
+    border-radius: 5px;
+    font-size: 12px;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+    z-index: 100;
+}
+
+/* Show tooltip when hovering */
+.info-icon:hover::after {
+    opacity: 1;
+}
+
+/* General form styles */
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #e0f7fa;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-step {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-top: 2px;
+}
+
+/* Label styles */
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* Input and select fields */
+input[type="text"], input[type="number"], select {
+    width: calc(100% - 20px); /* Adjust the width to leave space for padding */
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+}   
+
+/* Reset button styles */
+button[type="reset"] {
+    padding: 10px 20px;
+    background-color: #f44336; /* Red color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+button[type="reset"]:hover {
+    background-color: #520505; /* Darker red */
+}
+
+button[type="reset"]:focus {
+    outline: none;
+}
+
+button[type="next"] {
+    padding: 10px 20px;
+    background-color: #1e8134; /* green color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+button[type="next"]:hover {
+    background-color: #09f731; /* lighter green */
+    color: black;
+}
+
+button[type="next"]:focus {
+    outline: none;
+}
+
+button[type="prev"] {
+    padding: 10px 20px;
+    background-color: #36b8f4; 
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+button[type="prev"]:hover {
+    background-color: #02083b; 
+    color: yellow;
+}
+
+button[type="prev"]:focus {
+    outline: none;
+}
+
+/* Container for cost estimate field */
+.cost-estimate-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+#cost-estimate {
+    font-size: 16px;
+    font-weight: 700;
+    color: #333;
+    text-align: center;    
+    border: none;
+    background-color: transparent;
+}
+
+/* Flexbox for form layout */
+.form-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Media Query for Mobile Devices */
+@media (max-width: 768px) {
+    form {
+        padding: 15px;
+    }
+
+    .form-group {
+        flex-direction: column;
+    }
+
+    input[type="text"], input[type="number"], select {
+        width: 100%;
+    }
+}
+
+h1 {
+    text-align: center;
+}
+
+/* CSS to position the logo in the bottom-left corner */
+.logo {
+    position: fixed;
+    bottom: 20px; 
+    left: 20px;   
+    width: 50px; 
+    height: auto; 
+    z-index: 9999;
+}
+

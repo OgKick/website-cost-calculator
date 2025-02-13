@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Website Cost Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="icons8-calculator-50.png" type="image/x-icon">
+
+</head>
+
+<body>
+    <h1>Estimate Your Website Cost</h1>
+    <p>Estimating the costs of a Website can be complicated. And even if you find them you
+        never really know how much it is because the prices are all over the place. The prices also
+        depend on a lot of different factors like the amount of pages, the integrations and the features.
+        I tried to make a realistic estimate for Website costs but the actual costs can still vary on the
+        web designer and on other factors.</p>
+
+    <form>
+        <div class="form-step">
+            <h2> General informations about the Website</h2>
+            <label for="page-amount">How many pages do you need?</label>
+            <input type="number" value="0" id="page-amount" placeholder="Enter number of pages" step="1" required>
+            <span class="info-icon" data-info="Enter the number of pages you want on your website. The cost will increase with more pages.">i</span>
+        </div>
+        <div class="form-step" style="display: none;">
+            <label for="blog-posts">How many Blog posts do you need?</label>
+            <input type="range" id="blog-posts" min="0" max="100" value="0" step="4" />
+            <span id="blog-count">0</span> <!-- Display the number of blog posts here -->
+            <span class="info-icon" data-info="This controls how many blog posts you want to add to your site. More posts increase the cost.">i</span>
+
+            <label for="e-commerce">Do you need an e-commerce shop? (yes includes 6 products)</label>
+            <input type="checkbox" id="e-commerce" value="yes">
+            <span class="info-icon" data-info="This adds the cost of setting up an e-commerce store and up to 6 prodcucts to it. If you need more, please add below.">i</span>
+            <label for="additional-prod">Do you need additional products?</label>
+            <input type="number" value="0" id="additional-prod" placeholder="Enter number of additional products" step="5">
+            <span class="info-icon" data-info="This adds additional products to the calculation. The price will increase by $100 per 5 products.">i</span>
+        </div>
+
+        <div class="form-step" style="display: none;">
+            <h2>Hosting & Maintenance</h2>
+
+            <p>Select a hosting plan:</p>
+            <label for="base-host"><input type="radio" name="hosting" value="basic" id="base-host"> Basic Hosting</label>
+            <label for="pro-host"><input type="radio" name="hosting" value="pro" id="pro-host"> Pro Hosting</label>
+            <label for="adv-host"><input type="radio" name="hosting" value="advanced" id="adv-host"> Advanced Hosting</label>
+            <span class="info-icon" data-info="Advanced hosting is ideal for large businesses needing top-tier performance.">i</span>
+
+            <p>Select a maintenance plan:</p>
+            <label for="base-maint"><input type="radio" name="maintenance" value="basic" id="base-maint"> Basic Maintenance</label>
+            <label for="adv-maint"><input type="radio" name="maintenance" value="advanced" id="adv-maint"> Advanced Maintenance</label>
+            <span class="info-icon" data-info="Advanced maintenance includes priority support, backups, and security updates.">i</span>
+        </div>
+
+        <div class="form-step" style="display: none;">
+            <h2>Custom Features & Add-ons</h2>
+
+            <label for="seo-opt">Do you need SEO optimization?</label>
+            <input type="checkbox" id="seo-opt">
+            <span class="info-icon" data-info="Basic SEO setup (tags, meta data).">i</span>
+
+            <label for="cust-design">Would you like a customized design?</label>
+            <input type="checkbox" id="cust-design">
+            <span class="info-icon" data-info="Custom design includes personalized UI elements.">i</span>
+
+            <label for="cont-write">How many pages need content written?</label>
+            <input type="number" id="cont-write" value="0" min="0" step="1">
+            <span class="info-icon" data-info="Content writing for pages ($50 per page).">i</span>
+        </div>
+
+        <div class="form-step" style="display: none;">
+            <h2>Languages</h2>
+
+            <label for="add-lang">Number of additional languages:</label>
+            <input type="number" id="add-lang" value="0" min="0" step="1">
+            <span class="info-icon" data-info="Each additional language costs extra.">i</span>
+        </div>
+
+        <div class="form-step" style="display: none;">
+            <h2>Social Media Integration</h2>
+
+            <p>Select platforms to set up:</p>
+            <label for="facebook"><input type="checkbox" id="facebook"> Facebook</label>
+            <label for="instagram"><input type="checkbox" id="instagram"> Instagram</label>
+
+            <label for="add-social">Number of other social media platforms:</label>
+            <input type="number" id="add-social" value="0" min="0" step="1">
+            <span class="info-icon" data-info="Facebook & Instagram cost $100 each, others $50.">i</span>
+        </div>
+        
+        <div class="form-step" style="display: none;">
+            <h2>Stock Images</h2>
+
+            <label for="add-stock">Number of stock images needed:</label>
+            <input type="number" id="add-stock" value="0" min="0" step="1">
+            <span class="info-icon" data-info="Each stock image costs $10.">i</span>
+        </div>
+
+        <div class="form-step" style="display: none;">
+            <h2>Logo Design</h2>
+
+            <label for="logo-design">Do you need a logo?</label>
+            <input type="checkbox" id="logo-design">
+            <span class="info-icon" data-info="Custom logo design costs extra.">i</span>
+        </div>
+
+        <div class="form-step" style="display: none;">
+            <h2>Animations</h2>
+            <label for="cust-anim">How many custom animations do you need?</label>
+            <input type="number" value="0" id="cust-anim" placeholder="Enter number of custom animations you need" step="1">
+            <span class="info-icon" data-info="This adds the cost for any custom animations you need for your website">i</span>
+        </div>
+
+        <div class="form-step" style="display: none;">
+            <h2>Career page</h2>
+            <label for="career-page">Do you need a Career Page for your Website (yes incl. 4 Job listings)?</label>
+            <input type="checkbox" id="career-page" value="yes">
+            <input type="number" value="0" id="job-list" placeholder="Enter number of additional Job Listings you need" step="1">
+            <span class="info-icon" data-info="This adds the cost for setting up a career page and additional Job Listings you need">i</span>
+        </div>
+
+        <div class="form-step" style="display: none;">
+            <h2>Portfolio</h2>
+            <label for="portfolio">Do you need a Portfolio for your Website (yes incl. 4 Projects)?</label>
+            <input type="checkbox" id="portfolio" value="yes">
+            <input type="number" value="0" id="proj-list" placeholder="Enter number of additional projects you need" step="1">
+            <span class="info-icon" data-info="This adds the cost for setting up a portfolio and additional projects you need">i</span>
+        </div>
+
+        <div class="form-step" style="display: none;">
+            <h2>Service/Product Page</h2>
+            <label for="prod-page">Do you need a Product or Service Page for your Website (yes incl. 8 Products/Services)?</label>
+            <input type="checkbox" id="prod-page" value="yes">
+            <input type="number" value="0" id="products" placeholder="Enter number of additional Products/Services you need" step="1">
+            <span class="info-icon" data-info="This adds the cost for setting up a product or Service page and additional Services/Products you need">i</span>
+        </div>
+
+        <div class="form-step" style="display: none;">
+            <h2>Chatbot</h2>
+            <label for="chat-bot">Do you need a Chatbot integrated for your Website?</label>
+            <input type="checkbox" id="chat-bot" value="yes">
+            <span class="info-icon" data-info="This adds the cost for setting up a basic bot up and feed it with information about your company">i</span>
+        </div>
+
+        <div class="form-step" style="display: none;">
+            <h2>Database Integration</h2>
+            <label for="db-integ">Do you need a Database Integration for your Website?</label>
+            <input type="checkbox" id="db-integ" value="yes">
+            <span class="info-icon" data-info="This adds the cost for setting up a Database for user data, form submissions or other needs">i</span>
+        </div>
+
+        <div class="form-step" style="display: none;">
+            <h2>Login/Authentication Setup</h2>
+            <label for="login-auth">Do you need a Login/Authentication for your Website?</label>
+            <input type="checkbox" id="login-auth" value="yes">
+            <span class="info-icon" data-info="This adds the cost for customer login function">i</span>
+        </div>
+    </form>
+
+        <div class="buttons"> 
+            <button type="reset" id="reset-btn">Reset Form</button>
+            <button type="next" id="next-btn">Next</button>
+            <button type="prev" id="prev-btn">Previous</button>
+        </div>
+    <div id="cost-estimate">
+        <h2>Estimated Cost: $0</h2>
+    </div>
+
+    <img src="logo small.jpg" alt="GoldenEgg" class="logo">
+
+</body>
+    <script src="price_calculations.js"></script>
+
+</html>
